@@ -1,4 +1,4 @@
-# traffic light implementing on threads and synchronized objects
+# traffic light implementing on threads and synchronous objects
 
 output : 
 
