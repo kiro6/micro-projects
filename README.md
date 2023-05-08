@@ -1,6 +1,5 @@
-# micro-projects
-collection of micro projects about different topics
+# traffic light implementing on threads and synchronous objects
 
-## -dunder mufflin (simple web site with database and sessions)
-## -traffic light (threads and synchronous objects)
-## -server client chat (tcp,udp)
+output : 
+
+![Screenshot_20230318_205221](https://user-images.githubusercontent.com/57776872/226130559-3b88bdd7-6841-41ca-b74f-1e8ed3fc1e75.png)
