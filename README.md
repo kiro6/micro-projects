@@ -3,5 +3,5 @@
 
 ## - dunder mufflin website with (php ,database , sessions) 
 ## - trrafic light (threads , synchronized objects  )
-## - calculator-app-api        (java-RMI) 
+## - calculator-api        (java-RMI) 
 ## - Server-Client Chat (tcp , ucp , sockets)
