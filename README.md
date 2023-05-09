@@ -1,1 +1,1 @@
-# Java RMI calculator
+# Java RMI calculator api
