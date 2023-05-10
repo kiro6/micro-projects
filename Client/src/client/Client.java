@@ -43,10 +43,6 @@ public class Client {
                 }
                 double[] numbers = new double[numNumbers];
 
-//                for (int i = 0; i < numNumbers; i++) {
-//                    System.out.print("Enter number " + (i + 1) + ": ");
-//                    numbers[i] = scanner.nextDouble();
-//                };
                 int c = 0;
                 while (c < numNumbers) {
                     System.out.print("Enter number " + (c + 1) + ": ");

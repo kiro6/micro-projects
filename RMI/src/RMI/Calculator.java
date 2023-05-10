@@ -10,7 +10,7 @@ import java.rmi.*;
  */
 public interface Calculator extends Remote {
 
-    public int add(int n, int m) throws RemoteException;
+ 
     
     public String doArithmetic(String operation, double[] numbers) throws RemoteException;
 }

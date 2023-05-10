@@ -8,8 +8,7 @@ import java.rmi.*;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
-import java.util.EmptyStackException;
-import java.util.Stack;
+
 /**
  *
  * @author x66
@@ -21,10 +20,7 @@ public class Server extends UnicastRemoteObject implements Calculator {
 
     }
 
-    @Override
-    public int add(int n, int m) throws RemoteException {
-        return n + m;
-    }
+ 
 
     @Override
       public String doArithmetic(String operation, double[] numbers) {
