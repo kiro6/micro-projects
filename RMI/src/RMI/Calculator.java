@@ -12,5 +12,5 @@ public interface Calculator extends Remote {
 
     public int add(int n, int m) throws RemoteException;
     
-    public double doArithmetic(String operation, double[] numbers) throws RemoteException;
+    public String doArithmetic(String operation, double[] numbers) throws RemoteException;
 }

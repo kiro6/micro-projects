@@ -27,7 +27,7 @@ public class Server extends UnicastRemoteObject implements Calculator {
     }
 
     @Override
-      public double doArithmetic(String operation, double[] numbers) {
+      public String doArithmetic(String operation, double[] numbers) {
     try {
         double result = numbers[0];
         for (int i = 1; i < numbers.length; i++) {
@@ -43,8 +43,8 @@ public class Server extends UnicastRemoteObject implements Calculator {
                     break;
                 case "/":
                     if (numbers[i] == 0) {
-                        System.out.println("An error occurred: can not divide on zero");
-                        return 404 ; 
+                        System.out.println("An error occurred: can not divide by zero");
+                        return "can not divide by zero" ; 
                     }
                     result /= numbers[i];
                     break;
@@ -52,11 +52,11 @@ public class Server extends UnicastRemoteObject implements Calculator {
                     throw new IllegalArgumentException("Invalid operation: " + operation);
             }
         }
-        return result;
+        return  String.valueOf(result);
     } catch (Exception e) {
         // Handle the exception in a way that makes sense for your use case.
         System.out.println("An error occurred: " + e.getMessage());
-        return 404;
+        return "An error occurred: " + e.getMessage() ;
     }
 }
 
@@ -65,7 +65,7 @@ public class Server extends UnicastRemoteObject implements Calculator {
 
     public static void main(String[] args) throws RemoteException {
         try {
-            Registry reg = LocateRegistry.createRegistry(1022);
+            Registry reg = LocateRegistry.createRegistry(5555);
             reg.rebind("server", new Server());
             System.out.println("Server Is Running");
         } catch (Exception e) {

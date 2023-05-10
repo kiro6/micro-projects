@@ -20,27 +20,62 @@ public class Client {
      */
     public static void main(String[] args) {
         try {
-            Registry reg = LocateRegistry.getRegistry("localhost", 1022);
+            Registry reg = LocateRegistry.getRegistry("localhost", 5555);
             Calculator calc1 = (Calculator) reg.lookup("server");
-            //System.out.println("Calc : " + calc.add(5, 5));
+            boolean flage = true;
 
-            Scanner scanner = new Scanner(System.in);
-            
-             System.out.print("what operation do you want ? \n+\n-\n*\n/\n");
-             String op = scanner.nextLine();
-            
+            while (flage) {
+                Scanner scanner = new Scanner(System.in);
 
-            System.out.print("How many numbers do you want to enter? ");
-            int numNumbers = scanner.nextInt();
+                System.out.println("what operation do you want ? (+ , - , * , /) ");
+                String op = scanner.nextLine();
 
-            double[] numbers = new double[numNumbers];
+                if (!op.equals("+") && !op.equals("-") && !op.equals("/") && !op.equals("*")) {
+                    System.out.println("Invalid operator !!");
+                    continue;
+                }
 
-            for (int i = 0; i < numNumbers; i++) {
-                System.out.print("Enter number " + (i + 1) + ": ");
-                numbers[i] = scanner.nextDouble();
-            };
+                System.out.print("How many numbers do you want to enter? ");
+                int numNumbers = scanner.nextInt();
+                if (numNumbers == 1) {
+                    System.out.println("Enter more than one number");
+                    continue;
+                }
+                double[] numbers = new double[numNumbers];
 
-            System.out.println("Calc : " + calc1.doArithmetic(op, numbers));
+//                for (int i = 0; i < numNumbers; i++) {
+//                    System.out.print("Enter number " + (i + 1) + ": ");
+//                    numbers[i] = scanner.nextDouble();
+//                };
+                int c = 0;
+                while (c < numNumbers) {
+                    System.out.print("Enter number " + (c + 1) + ": ");
+
+                    try {
+                        numbers[c] = scanner.nextDouble();
+                        
+                    } catch (Exception e) {
+                        scanner.nextLine();
+                        System.out.println("Enter numric value !!!");
+                        continue;
+                    }
+                    c++;
+                }
+
+                System.out.println("Calc : " + calc1.doArithmetic(op, numbers));
+                scanner.nextLine();
+                System.out.println("do you want to continue  y/n");
+                String flage_S = scanner.nextLine();
+                if (flage_S.equalsIgnoreCase("y")) {
+                    continue;
+                } else if (flage_S.equalsIgnoreCase("n")) {
+                    System.out.println("Bye !!");
+                    flage = false;
+                } else {
+                    System.out.println("invalid choice so will continue");
+                }
+
+            }
 
         } catch (Exception e) {
             System.out.println(e);
