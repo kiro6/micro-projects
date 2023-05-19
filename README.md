@@ -1,7 +1,7 @@
-# collection of micro projects about different topics
+# calculator-java-api
 
+## requirements
+### java jdk 8 
+### GlassFish Server 4.2.1
+### Apache netbeans 11.3
 
-## - dunder mufflin website with (php ,database , sessions) 
-## - trrafic light (threads , synchronized objects  )
-## - calculator-api        (java-RMI) 
-## - Server-Client Chat (tcp , udp , sockets)
